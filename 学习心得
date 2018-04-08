@@ -1,0 +1,7 @@
+神经网络的前向传播函数： a = tf.matmul(x,w1) y = tf.matmul(a,w2) 计算输出值。
+将线性转换为非线性变换，使用激活函数和加入偏置项。常用的激活函数有: tf.nn.relu tf.sigmoid和tf.tanh
+损失函数的用途：优化目标，神经网络模型效果。
+交叉熵：通过概率q来表达分布概率p的困难程度。p是正确结果，q是预测值。交叉熵刻画两个概率分布的距离。H（p,q） = - y(p)log(y(q))
+cross_entropy = -tf.reduce_mean(
+  y_*tf.log(tf.clip_by_value(y,1e-10,1.0)))    tf.clip_by_value()将张量限制在一个范围之内。
+  
